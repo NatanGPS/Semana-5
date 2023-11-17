@@ -27,11 +27,17 @@
 
     sudo nano ping_desktop.yml
 <br> Dentro de nosso arquivo podemos escrever algumas linhas dando name ao nosso processo e especificando o grupo que ele irá executar no caso as linhas que iremos adicionar são as seguintes:
+
 <br> . "name": Ping Desktop: Este é um comentário que descreve o que o playbook está fazendo, usado apenas para identificar o processo
+
 <br> . "hosts": desktop: Especifica em quais hosts ou grupos de hosts as tarefas devem ser executadas. No nossocaso, criamos um grupo chamado desktop no arquivo de inventário (inventory.ini). Os hosts pertencentes a esse grupo serão os destinatários das tarefas neste playbook.
+
 <br> . "tasks": Aqui você lista as tarefas que deseja realizar nos hosts especificados.
+
 <br> . "name": Ping the desktop: Mais uma vez, é um comentário para descrever a tarefa que está sendo executada.
+
 <br> . "ping": Esta é uma tarefa específica do Ansible chamada "ping". Ela não executa um ping de rede como o comando de ping tradicional, mas verifica se os hosts podem se comunicar com o servidor Ansible.
+
 
 <br> Em suma devemos ter um arquivo parecido com essa saida:
 
@@ -87,7 +93,7 @@
     }
 
 
-<br> Certo, mas voce pode se perguntar, por que voce configurou dessa forma? Bom, como provider estou utilizando a aws por ser a solução cloud que estamos atualizando, na parte da região podemos usar qualquer uma, eu optei por usar a "us-east-2" na parte de recurso eu coloquei o recurso que quero upar no nosso caso uma instancia EC2 e no tipo da nossa instancia eu coloquei a que foi determinada pelo desafio juntamento com sua ami disponibilizada no proprio site da AWS.
+<br> Certo, mas voce pode se perguntar, por que voce configurou dessa forma? Bom, como provider estou utilizando a aws por ser a solução cloud que estamos utilizando, na parte da região podemos usar qualquer uma, eu optei por usar a "us-east-2", na parte de recurso eu coloquei o recurso que quero upar no nosso caso uma instancia EC2, e no tipo da nossa instancia eu coloquei a que foi determinada pelo desafio juntamento com sua ami disponibilizada no proprio site da AWS.
 
 <br> Certo, agora temos nossa configuração como fazemos pra fazer o deploy disso? Simples, salve seu arquivo e abra seu prompt de comando, vá para pasta que criamos para nosso projeto no meu caso:
 
