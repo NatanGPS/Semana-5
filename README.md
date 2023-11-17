@@ -70,17 +70,39 @@
 
         aws configure
 <br> Precisamos fornecer algumas informações para o console como nosso Acess Key ID, Acess Key, região e formato de saida dos logs
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br> Após fazer seu login, crie um diretorio para executar nosso projeto no meu caso criei a pasta "ec2_criar" na minha area de trabalho
+<br> Dentro desse diretorio criei um arquivo chamado "main.tf" esse arquivo será o responsável por executar nossos codigos para criação da ec2
+<br> Utilizando bloco de notas ou Visual Code podemos abrir o arquivo e começar nossas cofigurações para nossa ec2
+
+
+<br> Abrindo nosso arquivo main.tf podemos escrever nele nossas configurações de regiao e configurar o que queremos do nosso EC2, no meu caso configurei meu arquivo da seguinte forma: 
+
+    provider "aws" {
+        region = "sua_regiao_aws"
+    }
+
+    resource "aws_instance" "ec2_instance" {
+      ami           = "ami-0c55b159cbfafe1f0"
+      instance_type = "t2.micro"
+    }
+
+
+<br> Certo, mas voce pode se perguntar, por que voce configurou dessa forma? Bom, como provider estou utilizando a aws por ser a solução cloud que estamos atualizando, na parte da região podemos usar qualquer uma, eu optei por usar a "us-east-2" na parte de recurso eu coloquei o recurso que quero upar no nosso caso uma instancia EC2 e no tipo da nossa instancia eu coloquei a que foi determinada pelo desafio juntamento com sua ami disponibilizada no proprio site da AWS.
+
+<br> Certo, agora temos nossa configuração como fazemos pra fazer o deploy disso? Simples, salve seu arquivo e abra seu prompt de comando, vá para pasta que criamos para nosso projeto no meu caso:
+
+        cd Desktop/ec2_criar/
+<br> Dentro da nossa pasta vamos executar os seguintes comandos:
+
+        terraform init
+<br> Esse comando serve para iniciarmos o terraform em nosso diretorio
+
+        terraform plan
+<br> Comando utilizado para visualizar as alterações que foram escritas em nosso arquivo .tf
+
+        terraform apply
+<br> Esse comando aplica nossa configuração ou seja, ele mandará um "sinal" pra aws que irá iniciar nossa ec2 de acordo com a configuração que fizemos em nosso arquivo main.tf.
+<br> Se tudo der certo nosso ec2 foi criado com sucesso podemos ver seu processo de iniciação utilizando o AWS console em algum navegador, entre no AWS console e digite EC2 na barra de pesquisa, será possivel ver que nossa instancia foi criado com sucesso!!
 <br>
 <br>
 <br>
