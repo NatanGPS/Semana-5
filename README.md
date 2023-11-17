@@ -47,17 +47,29 @@
       ansible-playbook -i inventory.ini ping_desktop.yml
 
 
-## Segundo desafio: 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+## Segundo desafio: Instalar o terraform no seu desktop e criar o deploy de uma instancia EC t2.micro na AWS (Criar documentação e apresentar no final da semana)
+<br> Como estou utilizando como sistema operacional o Linux vou mostrar como instalar o terraform no mesmo. Primeiramente devemos entrar no site do terraform
+
+        https://developer.hashicorp.com/terraform/install?product_intent=terraform
+<br> Aqui podemos escolher todos sistemas operacionais que queremos no meu caso clicamos na aba Windows e baixamos a versão denominada de 386, um arquivo zip será baixado, após baixar extraia o zip para o disco C:, quando terminar a extração entre na pasta e copie o caminho do diretorio para chegar ate dentro da pasta, no meu caso o caminho foi: 
+
+        C:\terraform_1.6.4_windows_386
+<br> Com isso devidamente anotado vamos precisar adicionar esse caminho no nosso path, para aperte a tecla windows e digite na barra de pesquisa Editar as variaveis de ambiente no sistema, após abrir a janela verá um botao acima dos botoes "OK", "Cancelar" e "Aplicar" chamado de "Variaveis de Ambiente" clique nela e verá que abrirá uma nova janela, na parte denominada "Variaveis de sistema" Procure pelo nome Path e clique duas vezes para abri-lo.
+<br> Após abrir a varial Path clique no botão "Novo" para adiconar um novo caminho e cole o diretorio da sua pasta terraform, após colar clique em "OK" e feche as abas que continuam abertas.
+<br> Agora podemos testar se tudo correu bem, abra seu Windows PowerShell e digite o seguinte comando:
+
+        terraform --version
+<br> Se aparecer a versão tudo correu bem!
+
+
+<br> Com o Terraform devidamente instalado podemos partir pra instalação do nosso AWS CLi para isso acesse o site: 
+
+        https://aws.amazon.com/cli/        
+<br> Selecione a versão para windows e faça o download, com o aplicativo baixado, execute o mesmo e siga as instruções apresentadas para finalizar a instalação do mesmo.
+<br> Agora precisamos configurar nossa conta no clida aws, para isso abra seu Prompt de Comando e digite: 
+
+        aws configure
+<br> Precisamos fornecer algumas informações para o console como nosso Acess Key ID, Acess Key, região e formato de saida dos logs
 <br>
 <br>
 <br>
